@@ -15,6 +15,13 @@
 - **Vercel alias:** [https://harboros-logistics-intel.vercel.app](https://harboros-logistics-intel.vercel.app)
 - **GitHub:** [basisabp1984/harboros-logistics-intel](https://github.com/basisabp1984/harboros-logistics-intel)
 
+> **This is a reusable SaaS MVP skeleton.** The visible product (ocean-freight
+> intelligence) is a placeholder — the architecture, API-first contract, React
+> Portal interactions, dark theme, build pipeline, and deploy automation are the
+> reusable parts. Tell me what your product is — I will swap the mock data,
+> brand strings, and AI prompts and give you a live URL in a couple of days.
+> See [`docs/CUSTOMIZE.md`](docs/CUSTOMIZE.md) for the exact swap checklist.
+
 ---
 
 ## What is this?
