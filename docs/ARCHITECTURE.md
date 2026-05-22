@@ -181,3 +181,6 @@ the Vercel project settings — never commit `.env.local`.
 The Vercel deployment-protection feature is currently *off* on this project so that
 hiring managers can open the live URL without an account. If you fork it into a real
 product, turn protection back on.
+
+For the full picture — what is intentionally absent, what arrives before production,
+and how to report a vulnerability — see [`SECURITY.md`](../SECURITY.md).

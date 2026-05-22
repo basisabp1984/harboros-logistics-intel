@@ -130,6 +130,7 @@ with real providers — at that point there is actual logic to assert against.
 | [`docs/adr/`](docs/adr/) | Architecture Decision Records — why we chose what we chose |
 | [`DEPLOYMENT.md`](DEPLOYMENT.md) | GitHub + Vercel + Cloudflare DNS step-by-step |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to develop, commit conventions, folder rules |
+| [`SECURITY.md`](SECURITY.md) | Security posture, what's intentionally absent, pre-production plan |
 | [`CHANGELOG.md`](CHANGELOG.md) | Version history |
 | [`LICENSE`](LICENSE) | MIT |
 
