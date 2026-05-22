@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Shell } from "@/components/layout/Shell";
 
@@ -15,7 +14,6 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     <html lang="en">
       <body>
         <Shell>{children}</Shell>
-        <Analytics />
       </body>
     </html>
   );
