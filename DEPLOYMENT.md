@@ -3,15 +3,14 @@
 ## Public Links
 
 ```
-Stable demo:    https://harboros-logistics-intel.vercel.app
-Custom domain:  https://harbor.radai-1984.dev  (pending Cloudflare DNS)
-GitHub:         https://github.com/basisabp1984/harboros-logistics-intel
+Live demo:   https://harbor.radai-1984.dev
+Vercel alias: https://harboros-logistics-intel.vercel.app
+GitHub:      https://github.com/basisabp1984/harboros-logistics-intel
 ```
 
-The Vercel project is created and the GitHub repo is connected, so every push to
-`master` redeploys automatically. The custom domain `harbor.radai-1984.dev` has been
-added to the Vercel project but is awaiting a single DNS record in Cloudflare — see
-"Custom Domain" below.
+The Vercel project is connected to the GitHub repository — every push to `master`
+redeploys automatically. The custom subdomain points at Vercel's anycast IP via a
+single A record on the Cloudflare zone `radai-1984.dev`.
 
 The live demo lets a founder experience the product. The GitHub repository lets a technical
 reviewer inspect the architecture.
@@ -58,7 +57,7 @@ The intended custom domain is `harbor.radai-1984.dev`. The Vercel project alread
 this domain (added via `vercel domains add harbor.radai-1984.dev`). The DNS sits on
 Cloudflare for the parent zone `radai-1984.dev`.
 
-**Remaining step (one DNS record in Cloudflare):**
+**DNS configuration in place:**
 
 ```
 Type:   A
@@ -67,12 +66,11 @@ Value:  76.76.21.21
 Proxy:  DNS only
 ```
 
-After the record propagates, Vercel issues the certificate automatically and
+Vercel issued the TLS certificate automatically once the record propagated, and
 `https://harbor.radai-1984.dev` resolves to this project.
 
-If `radai-1984.dev` ever moves its nameservers to Vercel, this step is automated; right
-now the zone is on Cloudflare nameservers, so the A record above must be added in the
-Cloudflare DNS panel by the domain owner.
+For future subdomains on `radai-1984.dev`, repeat the same A-record pattern in
+Cloudflare (or use a scoped `Zone:DNS:Edit` API token to automate it).
 
 ## Suggested Client Message
 
