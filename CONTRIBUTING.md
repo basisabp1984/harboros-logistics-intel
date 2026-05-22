@@ -16,15 +16,23 @@ Open `http://localhost:3000`.
 
 ## Before opening a pull request
 
-Both checks below must pass clean:
+All three checks below must pass clean:
 
 ```bash
-npm run lint    # eslint-config-next, --max-warnings=0
-npm run build   # production build, fails on type or compile errors
+npm run lint              # eslint-config-next, --max-warnings=0
+npm run build             # production build, fails on type or compile errors
+bash scripts/smoke.sh     # hits every API endpoint and every page
 ```
 
-If you touch a route handler or an endpoint contract, please also smoke-check it
-with `curl` — examples are in [`docs/API.md`](docs/API.md).
+The smoke script defaults to `http://localhost:3000` — start the dev server
+first with `npm run dev`, then run it. You can also point it at a deployed
+URL for post-deploy validation:
+
+```bash
+bash scripts/smoke.sh https://harbor.radai-1984.dev
+```
+
+For curl-by-curl exploration of a single endpoint, see [`docs/API.md`](docs/API.md).
 
 ## Code conventions
 

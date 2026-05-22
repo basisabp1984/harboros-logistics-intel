@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `scripts/smoke.sh` — bash smoke test that hits every API endpoint and every
+  page, asserts HTTP 200 + recognizable JSON content. Runnable against any base
+  URL (local or production). Documented in README "QA pipeline" and required as
+  a pre-PR check in CONTRIBUTING.
+
 ## [0.1.0] — 2026-05-22
 
 Initial prototype release.

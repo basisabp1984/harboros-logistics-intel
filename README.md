@@ -97,6 +97,28 @@ npm run dev
 Open `http://localhost:3000`. No environment variables required — the prototype
 ships with mock data.
 
+## QA pipeline
+
+This prototype carries no Jest/Vitest unit tests — at the mock-data layer they
+would be tests of fixtures. Instead it uses a layered pyramid that catches
+everything the prototype can actually break:
+
+1. **TypeScript strict** — caught at `npm run build`.
+2. **ESLint `--max-warnings=0`** — any warning fails CI. `npm run lint`.
+3. **Production build** — `npm run build` fails on type or compile errors
+   that escape lint.
+4. **Smoke** — [`scripts/smoke.sh`](scripts/smoke.sh) hits every API endpoint
+   and every page, asserts HTTP 200 + recognizable JSON content. Runnable
+   against any base URL:
+
+   ```bash
+   bash scripts/smoke.sh                              # localhost:3000
+   bash scripts/smoke.sh https://harbor.radai-1984.dev
+   ```
+
+Jest + Playwright are added later, when mock route handlers are replaced
+with real providers — at that point there is actual logic to assert against.
+
 ## Documentation
 
 | Doc | What it covers |
