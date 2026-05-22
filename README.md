@@ -2,7 +2,8 @@
 
 Mission-control cockpit for ocean-freight operators. Built as an API-first MVP prototype to show product direction, UI behavior, and where real data systems can plug in later.
 
-- Live demo: https://harbor.radai-1984.dev
+- Live demo: https://harboros-logistics-intel.vercel.app (stable Vercel alias)
+- Custom domain target: https://harbor.radai-1984.dev (Vercel project ready, awaiting Cloudflare DNS record — see DEPLOYMENT.md)
 - GitHub: https://github.com/basisabp1984/harboros-logistics-intel
 
 The product covers six operator surfaces:

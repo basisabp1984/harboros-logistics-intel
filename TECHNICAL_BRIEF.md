@@ -13,7 +13,8 @@ and routing analysts understand:
 
 This is a prototype. It is not a production backend.
 
-- Live demo: https://harbor.radai-1984.dev
+- Live demo: https://harboros-logistics-intel.vercel.app
+- Custom domain target: https://harbor.radai-1984.dev (pending one Cloudflare DNS record — see DEPLOYMENT.md)
 - GitHub: https://github.com/basisabp1984/harboros-logistics-intel
 
 ## Architecture

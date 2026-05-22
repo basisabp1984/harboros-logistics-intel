@@ -3,9 +3,15 @@
 ## Public Links
 
 ```
-Live demo: https://harbor.radai-1984.dev
-GitHub:    https://github.com/basisabp1984/harboros-logistics-intel
+Stable demo:    https://harboros-logistics-intel.vercel.app
+Custom domain:  https://harbor.radai-1984.dev  (pending Cloudflare DNS)
+GitHub:         https://github.com/basisabp1984/harboros-logistics-intel
 ```
+
+The Vercel project is created and the GitHub repo is connected, so every push to
+`master` redeploys automatically. The custom domain `harbor.radai-1984.dev` has been
+added to the Vercel project but is awaiting a single DNS record in Cloudflare — see
+"Custom Domain" below.
 
 The live demo lets a founder experience the product. The GitHub repository lets a technical
 reviewer inspect the architecture.
@@ -48,21 +54,25 @@ database. Anyone who can `git pull` can run the demo.
 
 ## Custom Domain
 
-The intended custom domain is `harbor.radai-1984.dev`. The DNS sits on Cloudflare for the
-parent zone `radai-1984.dev`. To attach the subdomain:
+The intended custom domain is `harbor.radai-1984.dev`. The Vercel project already lists
+this domain (added via `vercel domains add harbor.radai-1984.dev`). The DNS sits on
+Cloudflare for the parent zone `radai-1984.dev`.
 
-1. Vercel → project settings → domains → add `harbor.radai-1984.dev`. Vercel prints the
-   required DNS record.
-2. Cloudflare → `radai-1984.dev` → DNS → add the record Vercel asked for. Usually:
+**Remaining step (one DNS record in Cloudflare):**
 
-   ```
-   Type: CNAME
-   Name: harbor
-   Value: cname.vercel-dns.com
-   Proxy: DNS only
-   ```
+```
+Type:   A
+Name:   harbor
+Value:  76.76.21.21
+Proxy:  DNS only
+```
 
-3. Wait for propagation. Vercel issues the certificate automatically.
+After the record propagates, Vercel issues the certificate automatically and
+`https://harbor.radai-1984.dev` resolves to this project.
+
+If `radai-1984.dev` ever moves its nameservers to Vercel, this step is automated; right
+now the zone is on Cloudflare nameservers, so the A record above must be added in the
+Cloudflare DNS panel by the domain owner.
 
 ## Suggested Client Message
 
